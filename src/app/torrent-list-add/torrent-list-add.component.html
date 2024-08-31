@@ -1,0 +1,13 @@
+<form [formGroup]="addTorrentForm" style="display: flex; flex-direction: row; gap: 6px;">
+    <mat-form-field appearance="outline">
+        <mat-label>Torrent Name</mat-label>
+        <input matInput formControlName="name">
+    </mat-form-field>
+    
+    <mat-form-field appearance="outline">
+        <mat-label>Magnet/Torrent</mat-label>
+        <input matInput formControlName="uri">
+    </mat-form-field>
+    
+    <button mat-stroked-button (click)="handleSubmit()">Basic</button>
+</form>

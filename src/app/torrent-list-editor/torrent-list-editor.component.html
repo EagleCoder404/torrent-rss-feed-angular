@@ -1,1 +1,29 @@
-<p>torrent-list-editor works!</p>
+<div style="width: 700px; margin: 100px auto;">
+    <app-torrent-list-add/>
+    <div>
+        @if(torrents !== undefined) {
+        
+            @for (torrent of torrents; track torrent.id) {
+                <div style="border:1px solid salmon; padding: 8px; flex-direction: row; display: flex; align-items: center;">
+                    <div style="flex-grow: 1;">
+                        <a [href]="torrent.magnetUrl" target="_blank">
+                            <p>
+                                {{torrent.name}}
+                            </p>
+                        </a>
+                    </div>
+                    <div>
+                        <button mat-mini-fab (click)="deleteHandler(torrent.id)">
+                            <mat-icon>
+                                delete
+                            </mat-icon>
+                        </button>
+                    </div>
+                </div>
+            }
+        }
+        @else {
+            <div>Loading</div>
+        }
+    </div>
+</div>
